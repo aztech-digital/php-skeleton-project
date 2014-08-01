@@ -50,7 +50,7 @@ class IndentingIoInterfaceDecorator implements IOInterface
                 $message = str_repeat('\x08', $this->indent) . $message;
             }
         } elseif (is_string($messages)) {
-            $messages = str_repeat('\x08'', $this->indent) . $messages;
+            $messages = str_repeat('\x08', $this->indent) . $messages;
         }
 
         return $this->io->write($messages, $newline);
