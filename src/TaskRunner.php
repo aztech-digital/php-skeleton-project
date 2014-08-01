@@ -13,7 +13,7 @@ class TaskRunner extends TaskCollection
 
         foreach ($this as $name => $task) {
             $io->write('  - Executing task <info>' . $name . '</info>');
-            $task->execute($io);
+            $task->execute($subIo);
         }
     }
 }
