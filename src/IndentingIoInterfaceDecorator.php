@@ -53,7 +53,7 @@ class IndentingIoInterfaceDecorator implements IOInterface
             return;
         }
 
-        $messages = str_repeat(' ', $this->indent) . '<debug>' . strip_tags($messages) . '</debug>' ;
+        $messages = str_repeat(' ', $this->indent) . '<comment>' . strip_tags($messages) . '</comment>' ;
 
         return $this->io->write($messages, $newline);
     }
