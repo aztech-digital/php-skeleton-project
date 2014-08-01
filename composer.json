@@ -6,5 +6,10 @@
 
 	"scripts": {
 		"post-create-project-cmd": ["Aztech\\Skeleton\\InstallCommand::postCreateProjectInstall"]
-	}
+	},
+
+        "name": "aztech/php-skeleton-project",
+        "description": "Skeleton for PHP projects",
+        "type": "project",
+        "homepage": "https://github.com/aztech-digital/php-skeleton-project"
 }
