@@ -1,12 +1,13 @@
 <?php
 
-namespace Aztech\Skeleton;
+namespace Aztech\Skeleton\Commands;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Composer\Script\Event;
 use Aztech\Skeleton\Tasks\GitInitTask;
+use Aztech\Skeleton\TaskRunner;
 
 class InstallCommand extends Command
 {
@@ -47,7 +48,7 @@ EOT;
         $runner = new TaskRunner();
 
         if ($initGit) {
-            $runner->add(new GitInitTask());
+            $runner->add('git-init', new GitInitTask());
         }
 
         $runner->run($io);

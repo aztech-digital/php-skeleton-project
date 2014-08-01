@@ -1,22 +1,22 @@
 {
-	"require": {
-		"symfony/console": "~2", 
-		"composer/composer": "dev-master",
-		"aztech/php-utils": "dev-master"
-	}, 
+  "require": {
+    "symfony/console": "~2",
+    "composer/composer": "dev-master",
+    "aztech/php-utils": "dev-master"
+  },
 
-	"scripts": {
-		"post-create-project-cmd": ["Aztech\\Skeleton\\InstallCommand::postCreateProjectInstall"]
-	}, 
+  "scripts": {
+    "post-create-project-cmd": ["Aztech\\Skeleton\\Commands\\InstallCommand::postCreateProjectInstall"]
+  },
 
-	"autoload": {
-		"psr-4": {
-			"Aztech\\Skeleton\\": "src/"
-		}
-	}, 
+  "autoload": {
+    "psr-4": {
+      "Aztech\\Skeleton\\": "src/"
+    }
+  },
 
-	"name": "aztech/php-skeleton-project", 
-	"description": "Skeleton for PHP projects", 
-	"type": "project", 
-	"homepage": "https://github.com/aztech-digital/php-skeleton-project"
+  "name": "aztech/php-skeleton-project",
+  "description": "Skeleton for PHP projects",
+  "type": "project",
+  "homepage": "https://github.com/aztech-digital/php-skeleton-project"
 }
