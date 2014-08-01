@@ -16,6 +16,17 @@ class InstallCommand extends Command
 
     public static function postCreateProjectInstall(Event $event)
     {
+        $header = <<<EOT
+   _____            __                .__      __________      .__.__       .___
+  /  _  \ _________/  |_  ____   ____ |  |__   \______   \__ __|__|  |    __| _/___________
+ /  /_\  \\___   /\   __\/ __ \_/ ___\|  |  \   |    |  _/  |  \  |  |   / __ |/ __ \_  __ \
+/    |    \/    /  |  | \  ___/\  \___|   Y  \  |    |   \  |  /  |  |__/ /_/ \  ___/|  | \/
+\____|__  /_____ \ |__|  \___  >\___  >___|  /  |______  /____/|__|____/\____ |\___  >__|
+        \/      \/           \/     \/     \/          \/                    \/    \/
+EOT;
+
+        $io->write($header);
+
         /* @var $io \Composer\IO\IOInterface */
         $io = $event->getIO();
 
