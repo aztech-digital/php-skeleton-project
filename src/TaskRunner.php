@@ -9,7 +9,7 @@ class TaskRunner extends TaskCollection
 
     public function run(IOInterface $io)
     {
-        $subIo = new IndentingIoInterfaceDecorator($io, 4);
+        $subIo = new IndentingIoInterfaceDecorator($io, 6);
 
         foreach ($this as $name => $task) {
             $io->write('  - Executing task <info>' . $name . '</info>');

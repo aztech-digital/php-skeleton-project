@@ -47,13 +47,15 @@ class IndentingIoInterfaceDecorator implements IOInterface
     {
         if (is_array($messages)) {
             foreach ($messages as & $message) {
-                $message = str_repeat(' ', $this->indent) . $message;
+                $this->write($message, true);
             }
-        } elseif (is_string($messages)) {
-            $messages = str_repeat(' ', $this->indent) . $messages;
+
+            return;
         }
 
-        return $this->io->write($messages, $newline);
+        $messages = str_repeat(' ', strip_tags($this->indent)) . $messages;
+
+        return $this->io->write('<debug>' . $messages . '</debug>', $newline);
     }
 
     public function overwrite($messages, $newline = true, $size = null)
