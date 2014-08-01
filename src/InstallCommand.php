@@ -16,6 +16,15 @@ class InstallCommand extends Command
 
     public static function postCreateProjectInstall(Event $event)
     {
-        echo 'Installed !' . PHP_EOL;
+        /* @var $io \Composer\IO\IOInterface */
+        $io = $event->getIO();
+
+        $projectName = $io->ask('Project name (vendor/package format)', null);
+        $initGit = $io->askConfirmation('Initialize Git repository', false);
+
+        $io->write('Creating project \'' . $name . '\'');
+        if ($initGit) {
+            $io->write('Initializing Git repository');
+        }
     }
 }
