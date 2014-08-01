@@ -6,12 +6,10 @@ use Aztech\Skeleton\Tasks\GitInitTask;
 use Aztech\Skeleton\TaskRunner;
 use Aztech\Skeleton\Tasks\ComposerReplaceTask;
 use Aztech\Skeleton\Tasks\ComposerUnlockTask;
-
 use Composer\Command\Helper\DialogHelper;
 use Composer\IO\IOInterface;
 use Composer\IO\ConsoleIO;
 use Composer\Script\Event;
-
 use Symfony\Component\Console\Helper\HelperSet;
 use Symfony\Component\Console\Helper\FormatterHelper;
 use Symfony\Component\Console\Helper\ProgressHelper;
@@ -20,7 +18,6 @@ use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-
 
 class InstallCommand extends Command
 {

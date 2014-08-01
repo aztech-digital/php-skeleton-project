@@ -26,5 +26,4 @@ class ComposerUnlockTask implements Task
 
         throw new \RuntimeException('Unable to delete lock file');
     }
-
 }

@@ -10,9 +10,6 @@ class ComposerReplaceTask implements Task
 
     public function execute(IOInterface $io)
     {
-
         $io->write(getcwd());
-
     }
-
 }
