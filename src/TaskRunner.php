@@ -14,6 +14,9 @@ class TaskRunner extends TaskCollection
         foreach ($this as $name => $task) {
             $io->write('  - Executing task <info>' . $name . '</info>');
             $task->execute($subIo);
+            $io->write('');
         }
+
+        $io->write(array('Successfully executed all tasks', ''));
     }
 }
