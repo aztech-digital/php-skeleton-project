@@ -14,8 +14,6 @@
 	<logging>
 		<log type="coverage-html" target="./tests/output/Coverage/" charset="UTF-8"
 			yui="true" highlight="true" />
-		<!--<log type="coverage-clover" target="./Results/Coverage.xml"/>-->
-		<log type="junit" target="./tests/output/Results/Results.xml" logIncompleteSkipped="true"/>
 	</logging>
 	<filter>
 	    <blacklist>
@@ -31,7 +29,5 @@
 	    </whitelist>
 	</filter>
 	<php>
-        <const name="PHPUNIT_HASH_PASS_COUNT" value="0" />
-        <const name="AUTH_LOAD_PSRLOG" value="true" />
     </php>
 </phpunit>

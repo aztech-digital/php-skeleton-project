@@ -45,3 +45,7 @@ tests/output
 .settings/
 .project
 .idea
+
+# Temp files #
+##############
+*~
