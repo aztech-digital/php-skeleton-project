@@ -12,7 +12,7 @@ class TaskCollection extends TypedCollection
         parent::__construct('\Aztech\Skeleton\Task');
     }
 
-    public function addTask(Task $task)
+    public function add(Task $task)
     {
         $this->addObject($task);
     }
