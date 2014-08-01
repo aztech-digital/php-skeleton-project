@@ -24,12 +24,17 @@ class InstallCommand extends Command
 
         $io->write(array(
             '',
-            '<info>Thank you</info>, now creating project \'' . $projectName . '\'',
+            'Thank you, now creating project <info>' . $projectName . '</info>',
             ''
         ));
 
         if ($initGit) {
-            $io->write('Initializing Git repository');
+            $io->write('Initializing Git repository...');
+
+            $init = new ProcessExecutor('git init');
+            $init->execute($command);
+
+            $io->write('Initialized repository !');
         }
     }
 }
