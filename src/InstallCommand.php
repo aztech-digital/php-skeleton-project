@@ -19,10 +19,10 @@ class InstallCommand extends Command
         /* @var $io \Composer\IO\IOInterface */
         $io = $event->getIO();
 
-        $projectName = $io->ask('Project name (vendor/package format)', null);
-        $initGit = $io->askConfirmation('Initialize Git repository', false);
+        $projectName = $io->ask('Project name (vendor/package format) : ', null);
+        $initGit = $io->askConfirmation('Initialize Git repository (y/N) ? ', false);
 
-        $io->write('Creating project \'' . $name . '\'');
+        $io->write('Creating project \'' . $projectName . '\'');
         if ($initGit) {
             $io->write('Initializing Git repository');
         }
