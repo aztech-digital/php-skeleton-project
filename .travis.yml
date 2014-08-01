@@ -33,5 +33,6 @@ deploy:
   bucket: aztech-digital.skeleton
   local-dir: build
   acl: public_read
+  skip_cleanup: true
   on:
     repo: aztech-digital/php-skeleton-project
