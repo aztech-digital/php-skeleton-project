@@ -21,7 +21,7 @@ script:
   - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
   - curl -LSs http://box-project.org/installer.php | php
   - php box.phar build
-  - skeleton.phar --version
+  - php skeleton.phar --version
 
 matrix:
   allow_failures:
