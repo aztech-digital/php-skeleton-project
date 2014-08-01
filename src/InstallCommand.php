@@ -32,7 +32,7 @@ class InstallCommand extends Command
             $io->write('Initializing Git repository...');
 
             $init = new ProcessExecutor('git init');
-            $init->execute($command);
+            $init->execute();
 
             $io->write('Initialized repository !');
         }
