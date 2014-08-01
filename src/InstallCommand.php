@@ -25,10 +25,10 @@ class InstallCommand extends Command
         \/      \/           \/     \/     \/          \/                    \/    \/
 EOT;
 
-        $io->write($header);
-
         /* @var $io \Composer\IO\IOInterface */
         $io = $event->getIO();
+
+        $io->write($header);
 
         $projectName = $io->ask('Project name (vendor/package format) : ', null);
         $initGit = $io->askConfirmation('Initialize Git repository (y/N) ? ', false);
