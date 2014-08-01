@@ -11,7 +11,7 @@ class GitInitTask implements Task
 
     public function execute(IOInterface $io)
     {
-        $io->write('Initializing Git repository...');
+        $io->write('Initializing Git repository...', false);
 
         $init = new ProcessExecutor('git init');
         $init->execute();
