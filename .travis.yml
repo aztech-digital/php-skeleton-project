@@ -23,6 +23,6 @@ script:
   - curl -LSs http://box-project.org/installer.php | php
   - php box.phar build
   - if [[ "$TRAVIS_PHP_VERSION" == "hhvm" ]]; then phpenv global hhvm; fi
-  - if [[ "$TRAVIS_PHP_VERSION" == "hhvm-nightly" ]]; then phpenv global hhvm-nigtly; fi
+  - if [[ "$TRAVIS_PHP_VERSION" == "hhvm-nightly" ]]; then phpenv global hhvm-nightly; fi
   - php --version
   - php skeleton.phar --version
