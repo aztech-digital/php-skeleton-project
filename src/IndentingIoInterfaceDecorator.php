@@ -3,6 +3,7 @@
 namespace Aztech\Skeleton;
 
 use Composer\IO\IOInterface;
+use Composer\Config;
 
 class IndentingIoInterfaceDecorator implements IOInterface
 {
