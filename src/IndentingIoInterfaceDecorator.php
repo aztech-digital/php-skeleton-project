@@ -45,22 +45,28 @@ class IndentingIoInterfaceDecorator implements IOInterface
 
     public function write($messages, $newline = true)
     {
-        if (is_array($messages)) {
-            foreach ($messages as & $message) {
-                $this->write($message, true);
-            }
-
-            return;
-        }
-
-        $messages = str_repeat(' ', $this->indent) . '<comment>' . strip_tags($messages) . '</comment>' ;
+        $this->rewriteContent($messages);
 
         return $this->io->write($messages, $newline);
     }
 
     public function overwrite($messages, $newline = true, $size = null)
     {
+        $this->rewriteContent($messages);
+
         return $this->io->overwrite($messages, $newline, $size);
+    }
+
+    private function rewriteContent(& $messages)
+    {
+        if (is_array($messages)) {
+            foreach ($messages as & $message) {
+                $this->rewriteContent($message);
+            }
+        }
+        else {
+            $messages = str_repeat(' ', $this->indent) . '<comment>' . strip_tags($messages) . '</comment>';
+        }
     }
 
     public function ask($question, $default = null)
