@@ -23,9 +23,8 @@ class InstallCommand extends Command
         $initGit = $io->askConfirmation('Initialize Git repository (y/N) ? ', false);
 
         $io->write(array(
-            'Thank you.',
             '',
-            'Creating project \'' . $projectName . '\'',
+            '<info>Thank you</info>, now creating project \'' . $projectName . '\'',
             ''
         ));
 
