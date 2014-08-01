@@ -6,9 +6,11 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Composer\Script\Event;
+use Aztech\Skeleton\Tasks\GitInitTask;
 
 class InstallCommand extends Command
 {
+
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         return self::postCreateProjectInstall();
@@ -42,13 +44,12 @@ EOT;
             ''
         ));
 
+        $runner = new TaskRunner();
+
         if ($initGit) {
-            $io->write('Initializing Git repository...');
-
-            $init = new ProcessExecutor('git init');
-            $init->execute();
-
-            $io->write('Initialized repository !');
+            $runner->add(new GitInitTask());
         }
+
+        $runner->run($io);
     }
 }
