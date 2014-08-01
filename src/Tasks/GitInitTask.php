@@ -16,6 +16,6 @@ class GitInitTask implements Task
         $init = new ProcessExecutor('git init');
         $init->execute();
 
-        $io->overwrite('Initialized repository !');
+        $io->overwrite('Repository initialized');
     }
 }
