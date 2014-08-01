@@ -22,7 +22,13 @@ class InstallCommand extends Command
         $projectName = $io->ask('Project name (vendor/package format) : ', null);
         $initGit = $io->askConfirmation('Initialize Git repository (y/N) ? ', false);
 
-        $io->write('Creating project \'' . $projectName . '\'');
+        $io->write(array(
+            'Thank you.',
+            '',
+            'Creating project \'' . $projectName . '\'',
+            ''
+        ));
+
         if ($initGit) {
             $io->write('Initializing Git repository');
         }
